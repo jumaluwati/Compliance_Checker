@@ -29,35 +29,23 @@ This application provides a Streamlit-based user interface for checking the comp
     cd Compliance_Checker
     ```
 
-2.  **Configure the `.env` file:**
+Configure the `.env` file:
 
-    *   Copy the `.env.example` file to `.env`:
+1.  Copy the `.env.example` file to `.env`:
 
-        ```bash
-        cp .env.example .env
-        ```
+    ```bash
+    cp .env.example .env
+    ```
 
-    *   **Important:** Edit the `.env` file and set the following environment variables:
+2.  **Important:** Edit the `.env` file and set the following environment variables:
 
-        *   `MYSQL_ROOT_PASSWORD`:  Change this to a strong password for the MySQL root user.
-        *   `MYSQL_PASSWORD`: Change this to a strong password for the `compliance_user` database user.
-        *   `DNAC_IP`:  Your Cisco DNAC IP address.  **This is required for DNAC integration.**
-        *   `USERNAME`: Your Cisco DNAC username. **This is required for DNAC integration.**
-        *   `PASSWORD`: Your Cisco DNAC password. **This is required for DNAC integration.**
+    *   `MYSQL_ROOT_PASSWORD`: Change this to a strong password for the MySQL root user.
+    *   `MYSQL_PASSWORD`: Change this to a strong password for the `compliance_user` database user.
+    *   `DNAC_IP`: Your Cisco DNAC IP address. This is required for DNAC integration.
+    *   `USERNAME`: Your Cisco DNAC username. This is required for DNAC integration.
+    *   `PASSWORD`: Your Cisco DNAC password. This is required for DNAC integration.
 
-        **Warning:**  Do not commit the `.env` file with your actual credentials to a public repository.  The `.gitignore` file should prevent this, but double-check.
-
-    *   **Example `.env`:**
-
-        ```
-        MYSQL_ROOT_PASSWORD=CHANGE_ME_ROOT  # Change this to a strong password!
-        MYSQL_DATABASE=compliance_db
-        MYSQL_USER=compliance_user
-        MYSQL_PASSWORD=CHANGE_ME_DB  # Change this to a strong password!
-        DNAC_IP=10.147.26.90 # Replace with your DNAC IP
-        USERNAME=jalluwat # Replace with your DNAC Username
-        PASSWORD=Cisco1234 # Replace with your DNAC Password
-        ```
+    **Warning:** Do not commit the `.env` file with your actual credentials to a public repository. The `.gitignore` file should prevent this, but double-check.
 
 3.  **Run the application with Docker Compose:**
 
