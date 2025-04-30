@@ -35,9 +35,6 @@ This application provides a Streamlit-based user interface for checking the comp
 
     Edit the `.env` file by setting the appropriate values for your environment. It is highly recommended to change the default MySQL credentials for enhanced security:
 
-    ```bash
-    cp .env.example .env
-    ```
 
     *   `MYSQL_ROOT_PASSWORD`: Change this to a strong password for the MySQL root user.
     *   `MYSQL_DATABASE`:  This is the name of the MySQL database.  You can typically leave this as `compliance_db`.
