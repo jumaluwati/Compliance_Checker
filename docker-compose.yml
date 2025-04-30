@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_root_password
+      MYSQL_DATABASE: compliance_db
+      MYSQL_USER: compliance_user
+      MYSQL_PASSWORD: my_secret_db_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      DB_HOST: mysql
+      DB_USER: compliance_user
+      DB_PASSWORD: my_secret_db_password
+      DB_NAME: compliance_db
+      DNAC_IP: 10.147.26.90
+      USERNAME: jalluwat
+      PASSWORD: Cisco1234
+    ports:
+      - "8501:8501"
+    depends_on:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: compliance_user
+      PMA_PASSWORD: my_secret_db_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
