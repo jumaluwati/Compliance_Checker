@@ -14,7 +14,7 @@ This application provides a Streamlit-based user interface for checking the comp
 
 ## Prerequisites
 
-*   [Docker](https://www.docker.com/get-started) or
+*   [Docker](https://www.docker.com/get-started) 
 *   Python 3.8 or higher
 *   [Docker Compose](https://docs.docker.com/compose/install/) (If using Docker)
 
