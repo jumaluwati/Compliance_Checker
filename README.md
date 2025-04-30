@@ -25,7 +25,7 @@ This application provides a Streamlit-based user interface for checking the comp
 1.  **Clone the repository:**
 
     ```bash
-    git clone (https://github.com/jumaluwati/Compliance_Checker)
+    git clone https://github.com/jumaluwati/Compliance_Checker
     cd Compliance_Checker
     ```
 
