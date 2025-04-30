@@ -22,6 +22,8 @@ This application provides a Streamlit-based user interface for checking the comp
 
 **Option 1: Using Docker Compose (Recommended)**
 
+## Setup and Installation
+
 1.  **Clone the repository:**
 
     ```bash
@@ -29,114 +31,38 @@ This application provides a Streamlit-based user interface for checking the comp
     cd Compliance_Checker
     ```
 
-Configure the `.env` file:
+2.  **Configure the `.env` file:**
 
-1.  Copy the `.env.example` file to `.env`:
+    Edit the `.env` file by setting the appropriate values for your environment. It is highly recommended to change the default MySQL credentials for enhanced security:
 
     ```bash
     cp .env.example .env
     ```
 
-2.  **Important:** Edit the `.env` file and set the following environment variables:
-
     *   `MYSQL_ROOT_PASSWORD`: Change this to a strong password for the MySQL root user.
+    *   `MYSQL_DATABASE`:  This is the name of the MySQL database.  You can typically leave this as `compliance_db`.
+    *   `MYSQL_USER`: This is the MySQL username. You can typically leave this as `compliance_user`.
     *   `MYSQL_PASSWORD`: Change this to a strong password for the `compliance_user` database user.
-    *   `DNAC_IP`: Your Cisco DNAC IP address. This is required for DNAC integration.
-    *   `USERNAME`: Your Cisco DNAC username. This is required for DNAC integration.
-    *   `PASSWORD`: Your Cisco DNAC password. This is required for DNAC integration.
+    *   `DNAC_IP`: Your Cisco Catalyst Center (DNAC) IP address. This is required for DNAC integration.
+    *   `USERNAME`: Your Cisco Catalyst Center (DNAC) username. This is required for DNAC integration.
+    *   `PASSWORD`: Your Cisco Catalyst Center (DNAC) password. This is required for DNAC integration.
 
-    **Warning:** Do not commit the `.env` file with your actual credentials to a public repository. The `.gitignore` file should prevent this, but double-check.
+    **Important:** Do not commit the `.env` file with your actual credentials to a public repository. The `.gitignore` file should prevent this, but double-check.
 
 3.  **Run the application with Docker Compose:**
 
     ```bash
-    docker-compose up --build
+    docker-compose up --build -d
     ```
 
-    This command will build the Docker image and start the application, including the MySQL database and phpMyAdmin.
+    This command will build the Docker image and start the application, including the MySQL database and phpMyAdmin, in detached mode (running in the background).
 
 4.  **Access the application:**
 
     *   The Streamlit application will be available at `http://localhost:8501`.
-    *   phpMyAdmin will be available at `http://localhost:8080`.  Use the `compliance_user` and `MYSQL_PASSWORD` from your `.env` file to log in.
+    *   phpMyAdmin will be available at `http://localhost:8080`. Use the `compliance_user` and `MYSQL_PASSWORD` from your `.env` file to log in.
 
-**Option 2: Without Docker (Using Python Directly)**
 
-1.  **Clone the repository:**
-
-    ```bash
-    git clone <repository_url>
-    cd <repository_directory>
-    ```
-
-2.  **Create a virtual environment (recommended):**
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Linux/macOS
-    venv\Scripts\activate  # On Windows
-    ```
-
-3.  **Install the required packages:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-    The `requirements.txt` file lists the necessary Python packages.  It should contain the following (or similar) entries:
-
-    ```
-    streamlit==1.29.0
-    pandas==2.1.4
-    requests==2.31.0
-    urllib3==2.1.0
-    mysql-connector-python==8.2.0
-    ```
-
-4.  **Configure Environment Variables:**
-
-    Set the following environment variables in your shell or terminal:
-
-    *   `MYSQL_ROOT_PASSWORD`: The password for the MySQL root user (used during initial database setup).
-    *   `MYSQL_PASSWORD`: The password for the `compliance_user` database user.
-    *   `DB_HOST`: The hostname or IP address of your MySQL server (e.g., `localhost` if running locally).
-    *   `DB_USER`: The MySQL username (should be `compliance_user`).
-    *   `DB_NAME`: The name of the MySQL database (should be `compliance_db`).
-    *   `DNAC_IP`: Your Cisco DNAC IP address.  **This is required for DNAC integration.**
-    *   `USERNAME`: Your Cisco DNAC username. **This is required for DNAC integration.**
-    *   `PASSWORD`: Your Cisco DNAC password. **This is required for DNAC integration.**
-
-    **Example (Linux/macOS):**
-
-    ```bash
-    export MYSQL_ROOT_PASSWORD=your_root_password
-    export MYSQL_PASSWORD=your_db_password
-    export DB_HOST=localhost
-    export DB_USER=compliance_user
-    export DB_NAME=compliance_db
-    export DNAC_IP=your_dnac_ip
-    export USERNAME=your_dnac_username
-    export PASSWORD=your_dnac_password
-    ```
-
-    **Example (Windows):**
-
-    ```powershell
-    $env:MYSQL_ROOT_PASSWORD = "your_root_password"
-    $env:MYSQL_PASSWORD = "your_db_password"
-    $env:DB_HOST = "localhost"
-    $env:DB_USER = "compliance_user"
-    $env:DB_NAME = "compliance_db"
-    $env:DNAC_IP = "your_dnac_ip"
-    $env:USERNAME = "your_dnac_username"
-    $env:PASSWORD = "your_dnac_password"
-    ```
-
-5.  **Run the application:**
-
-    ```bash
-    streamlit run test19.py
-    ```
 
 ## Usage
 
