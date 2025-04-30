@@ -1,7 +1,6 @@
-
 # Switch Configuration Compliance Checker with DNAC Integration
 
-This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco DNA Center (DNAC) or load them from uploaded files.  The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
+This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco DNA Center (DNAC) or load them from uploaded files. The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
 
 ## Features
 
@@ -14,13 +13,8 @@ This application provides a Streamlit-based user interface for checking the comp
 
 ## Prerequisites
 
-*   [Docker](https://www.docker.com/get-started) 
-*   Python 3.8 or higher
-*   [Docker Compose](https://docs.docker.com/compose/install/) (If using Docker)
-
-## Setup and Installation
-
-**Option 1: Using Docker Compose (Recommended)**
+*   [Docker](https://www.docker.com/get-started)
+*   [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Setup and Installation
 
@@ -35,9 +29,8 @@ This application provides a Streamlit-based user interface for checking the comp
 
     Edit the `.env` file by setting the appropriate values for your environment. It is highly recommended to change the default MySQL credentials for enhanced security:
 
-
     *   `MYSQL_ROOT_PASSWORD`: Change this to a strong password for the MySQL root user.
-    *   `MYSQL_DATABASE`:  This is the name of the MySQL database.  You can typically leave this as `compliance_db`.
+    *   `MYSQL_DATABASE`: This is the name of the MySQL database. You can typically leave this as `compliance_db`.
     *   `MYSQL_USER`: This is the MySQL username. You can typically leave this as `compliance_user`.
     *   `MYSQL_PASSWORD`: Change this to a strong password for the `compliance_user` database user.
     *   `DNAC_IP`: Your Cisco Catalyst Center (DNAC) IP address. This is required for DNAC integration.
@@ -52,15 +45,14 @@ This application provides a Streamlit-based user interface for checking the comp
     docker-compose up --build -d
     ```
 
-    This command will build the Docker image and start the application, including the MySQL database and phpMyAdmin, in detached mode (running in the background).
+    This command will build the Docker image and start the application, including the MySQL database and phpMyAdmin, in detached mode (running in the background). The necessary Python packages are automatically installed within the Docker container as defined in the `Dockerfile` and `requirements.txt`.
 
 4.  **Access the application:**
 
     *   The Streamlit application will be available at `http://localhost:8501`.
     *   phpMyAdmin will be available at `http://localhost:8080`. Use the `compliance_user` and `MYSQL_PASSWORD` from your `.env` file to log in.
-
-
-
+  
+    
 ## Usage
 
 1.  **Connect to DNAC (Optional):**
@@ -73,7 +65,7 @@ This application provides a Streamlit-based user interface for checking the comp
 
     *   You can load device configurations in two ways:
         *   **Upload a Configuration File:** Upload a `.txt` file containing the device configuration. The filename (without the extension) will be used as the device name.
-        *   **Fetch from DNAC:** Select devices from the list of available devices in DNAC and click "Fetch and Store DNAC Configurations."  This will retrieve the configurations and store them in the database.
+        *   **Fetch from DNAC:** Select devices from the list of available devices in DNAC and click "Fetch and Store DNAC Configurations." This will retrieve the configurations and store them in the database.
 
 3.  **Define Compliance Policies:**
 
@@ -104,7 +96,7 @@ This application provides a Streamlit-based user interface for checking the comp
     *   `config`: LONGTEXT (Device configuration)
     *   `last_saved`: TIMESTAMP (Timestamp of the last save)
 
-*   If using Docker, you can use phpMyAdmin (available at `http://localhost:8080`) to manage the database.  Use the `compliance_user` and `MYSQL_PASSWORD` from your `.env` file to log in.  If running without Docker, you'll need to use a separate MySQL client.
+*   You can use phpMyAdmin (available at `http://localhost:8080`) to manage the database. Use the `compliance_user` and `MYSQL_PASSWORD` from your `.env` file to log in.
 
 ## Troubleshooting
 
@@ -113,11 +105,8 @@ This application provides a Streamlit-based user interface for checking the comp
     *   Ensure that your application can reach the DNAC instance.
 *   **Database Connection Issues:**
     *   Verify that the MySQL database is running.
-    *   Verify that the database credentials in the `.env` file (or environment variables if not using Docker) are correct.
+    *   Verify that the database credentials in the `.env` file are correct.
+*   **Application Errors:**
+    *   Check the application logs for error messages.  You can view the logs of the running Docker containers using `docker-compose logs -f`.
 *   **Configuration Errors:**
-    *   Check the application logs for error messages.
     *   Ensure that the configuration files are in the correct format.
-
-## Feel free to contact me if you have any questions !
-
-*   Email: juma.luwati@gmail.com
