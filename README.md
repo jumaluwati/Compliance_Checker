@@ -1,7 +1,4 @@
-<!-- Outer Textbox for Readability -->
-<textarea style="width: 100%; height: 600px;">
-<!-- Inner Textbox for Copy-Pasting -->
-<textarea style="width: 98%; height: 580px;">
+
 # Switch Configuration Compliance Checker with DNAC Integration
 
 This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco DNA Center (DNAC) or load them from uploaded files.  The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
