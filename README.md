@@ -120,4 +120,4 @@ This application provides a Streamlit-based user interface for checking the comp
 
 ## Feel free to contact me if you have any questions !
 
-*   **Email: juma.luwati@gmail.com
+*   Email: juma.luwati@gmail.com
