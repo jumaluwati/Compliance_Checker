@@ -55,7 +55,7 @@ This application provides a Streamlit-based user interface for checking the comp
     
 ## Usage
 
-1.  **Connect to DNAC (Optional):**
+1.  **Connect to Catalyst Center:**
 
     *   In the Streamlit UI, expand the "DNAC Connection" section.
     *   Enter your Catalyst Center IP address, username, and password.
