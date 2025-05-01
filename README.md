@@ -100,7 +100,7 @@ This application provides a Streamlit-based user interface for checking the comp
 
 ## Troubleshooting
 
-*   **DNAC Connection Issues:**
+*   **Catalyst Center Connection Issues:**
     *   Verify that the Catalyst Center IP address, username, and password are correct.
     *   Ensure that your application can reach the Catalyst Center instance.
 *   **Database Connection Issues:**
