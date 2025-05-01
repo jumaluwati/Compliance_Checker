@@ -1,4 +1,4 @@
-# Device Configuration Compliance Checker with DNAC Integration
+# Configuration Compliance Checker with Catalyst Center Integration
 
 This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco DNA Center (DNAC) or load them from uploaded files. The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
 
