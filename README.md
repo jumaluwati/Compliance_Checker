@@ -110,3 +110,7 @@ This application provides a Streamlit-based user interface for checking the comp
     *   Check the application logs for error messages.  You can view the logs of the running Docker containers using `docker-compose logs -f`.
 *   **Configuration Errors:**
     *   Ensure that the configuration files are in the correct format.
+
+## Demo Video
+
+[![Demo Video](collateral/demo.mp4)
