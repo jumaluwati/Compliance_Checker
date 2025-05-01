@@ -113,4 +113,4 @@ This application provides a Streamlit-based user interface for checking the comp
 
 ## Demo Video
 
-[![Demo Video](collateral/demo.mp4)
+[![Video Icon](https://img.icons8.com/color/48/000000/film-reel.png) Click here to watch the demo video](collateral/demo.mp4)
