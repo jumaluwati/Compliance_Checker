@@ -1,10 +1,10 @@
 # Configuration Compliance Checker with Catalyst Center Integration
 
-This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco DNA Center (DNAC) or load them from uploaded files. The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
+This application provides a Streamlit-based user interface for checking the compliance of switch configurations against predefined policies. It can fetch configurations from Cisco Catalyst Center (formerly Dna Center) or load them from uploaded files. The application stores configurations in a MySQL database and allows users to define compliance rules based on templates and interface configurations.
 
 ## Features
 
-*   **DNAC Integration:** Fetches device configurations directly from Cisco DNA Center.
+*   **Catalyst Center Integration:** Fetches device configurations directly from Cisco Catalyst Center.
 *   **Configuration Upload:** Allows users to upload configuration files for analysis.
 *   **Database Storage:** Stores device configurations in a MySQL database for persistence and easy retrieval.
 *   **Compliance Policy Definition:** Enables users to define compliance rules based on templates and interface configurations.
@@ -33,9 +33,9 @@ This application provides a Streamlit-based user interface for checking the comp
     *   `MYSQL_DATABASE`: This is the name of the MySQL database. You can typically leave this as `compliance_db`.
     *   `MYSQL_USER`: This is the MySQL username. You can typically leave this as `compliance_user`.
     *   `MYSQL_PASSWORD`: Change this to a strong password for the `compliance_user` database user.
-    *   `DNAC_IP`: Your Cisco Catalyst Center (DNAC) IP address. This is required for DNAC integration.
-    *   `USERNAME`: Your Cisco Catalyst Center (DNAC) username. This is required for DNAC integration.
-    *   `PASSWORD`: Your Cisco Catalyst Center (DNAC) password. This is required for DNAC integration.
+    *   `DNAC_IP`: Your Cisco Catalyst Center (DNAC) IP address. This is required for Catalyst Center integration.
+    *   `USERNAME`: Your Cisco Catalyst Center (DNAC) username. This is required for Catalyst Center integration.
+    *   `PASSWORD`: Your Cisco Catalyst Center (DNAC) password. This is required for Catalyst Center integration.
 
     **Important:** Do not commit the `.env` file with your actual credentials to a public repository. The `.gitignore` file should prevent this, but double-check.
 
@@ -58,14 +58,14 @@ This application provides a Streamlit-based user interface for checking the comp
 1.  **Connect to DNAC (Optional):**
 
     *   In the Streamlit UI, expand the "DNAC Connection" section.
-    *   Enter your DNAC IP address, username, and password.
+    *   Enter your Catalyst Center IP address, username, and password.
     *   If the connection is successful, you will see a "Connected to DNAC successfully!" message.
 
 2.  **Load Device Configurations:**
 
     *   You can load device configurations in two ways:
         *   **Upload a Configuration File:** Upload a `.txt` file containing the device configuration. The filename (without the extension) will be used as the device name.
-        *   **Fetch from DNAC:** Select devices from the list of available devices in DNAC and click "Fetch and Store DNAC Configurations." This will retrieve the configurations and store them in the database.
+        *   **Fetch from DNAC:** Select devices from the list of available devices in Catalyst Center and click "Fetch and Store DNAC Configurations." This will retrieve the configurations and store them in the database.
 
 3.  **Define Compliance Policies:**
 
@@ -101,8 +101,8 @@ This application provides a Streamlit-based user interface for checking the comp
 ## Troubleshooting
 
 *   **DNAC Connection Issues:**
-    *   Verify that the DNAC IP address, username, and password are correct.
-    *   Ensure that your application can reach the DNAC instance.
+    *   Verify that the Catalyst Center IP address, username, and password are correct.
+    *   Ensure that your application can reach the Catalyst Center instance.
 *   **Database Connection Issues:**
     *   Verify that the MySQL database is running.
     *   Verify that the database credentials in the `.env` file are correct.
