@@ -1,0 +1,5 @@
+streamlit
+requests
+mysql-connector-python
+python-dotenv
+urllib3
