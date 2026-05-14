@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mysql:
     image: mysql:8.0
@@ -27,6 +25,9 @@ services:
       DNAC_IP: 10.147.26.90
       USERNAME: jalluwat
       PASSWORD: Cisco1234
+      ISE_IP: 10.147.26.89
+      ISE_USERNAME: admin
+      ISE_PASSWORD: C1sco12345
     ports:
       - "8501:8501"
     depends_on:
