@@ -28,11 +28,11 @@ This application is a Streamlit-based tool that automates the validation of netw
     ```
 
 2.  **⚙️ Configure Environment Variables:**
-    Create your local configuration file by copying the example:
-    ```bash
-    cp env.example .env
-    ```
-    Open the newly created `.env` file and replace the placeholder values with your actual DNAC, ISE, and database credentials.
+    *   First, copy the example file to create your local configuration:
+        ```bash
+        cp env.example .env
+        ```
+    *   Open the newly created `.env` file and replace the placeholder values with your actual DNAC, ISE, and database credentials.
     *   *Note: The `.env` file is ignored by Git to ensure your credentials remain private.*
 
 3.  **🚀 Run the application:**
