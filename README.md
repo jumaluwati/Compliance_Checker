@@ -1,4 +1,4 @@
-# 🔍 ISE Compliance Checker
+# 🔍 Catalyst Center - ISE Compliance Checker
 
 This application is a Streamlit-based tool that automates the validation of network device configurations. It fetches inventory and configuration data from Cisco Catalyst Center (DNAC) and Cisco ISE, stores them in a MySQL database, and checks them against predefined compliance rules.
 
